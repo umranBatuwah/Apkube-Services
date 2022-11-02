@@ -1,0 +1,64 @@
+{
+  "applications": "*",
+  "changelogDate": "20220408082929",
+  "clientRootFolder": "cloudasset-management-service",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "department_product",
+  "fields": [
+    {
+      "fieldName": "description",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "5000"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdOn",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "updatedOn",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "updatedBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "microserviceName": "cloudasset-management-service",
+  "name": "DepartmentProduct",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "product",
+      "otherEntityRelationshipName": "departmentProduct",
+      "relationshipName": "product",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "department",
+      "otherEntityRelationshipName": "departmentProduct",
+      "relationshipName": "department",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "cloudEnvironment",
+      "otherEntityRelationshipName": "departmentProduct",
+      "relationshipName": "cloudEnvironment",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}
